@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useAppStore } from "./store/appStore";
 import UILab from "./modules/Pages/UILab";
 import AboutMePage from "./modules/aboutMe/pages/AboutMePage";
-
+import TechWin from "./modules/icon3D/pages/TechWin";
 function App() {
   const { isDarkMode, language } = useAppStore();
   const { i18n } = useTranslation();
@@ -39,6 +39,7 @@ function App() {
         <Routes>
           <Route index element={<UILab />} />
           <Route path="/About-MePage" element={<AboutMePage />} />
+          <Route path="/TechWin" element={<TechWin />} />
         </Routes>
       </BrowserRouter>
     </ConfigProvider>

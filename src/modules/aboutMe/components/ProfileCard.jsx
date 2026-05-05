@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Typography, Avatar, Space, Tag } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import myPhoto from '../../../assets/myPhoto.jpg';
+import myPhoto from '../../../assets/images/myPhoto.jpg';
 
 const { Title, Text, Paragraph } = Typography;
 

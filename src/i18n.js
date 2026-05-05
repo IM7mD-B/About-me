@@ -80,7 +80,15 @@ const resources = {
       "Core Framework": "Core Framework",
       "Weekly Commits": "Weekly Commits",
       "Hours Coded": "Hours Coded",
-      "Coffee Cups": "Coffee Cups"
+      "Coffee Cups": "Coffee Cups",
+      "TechWin": "Techwin",
+      "TechWinInfo": "Techwin is an innovative technology startup specializing in the design and development of websites and smart applications. Our mission is to empower individuals and businesses through digital transformation by delivering cutting-edge digital solutions that combine high quality, seamless user experiences, advanced security, and outstanding performance. ",
+      "QTechWin":"What is Techwin?",
+      "discoverTechwin":"Explore Techwin",
+      "AboutMeenGadhha":"About MeenGadhha",
+      "MeenGadhhaInfo":"A competitive game based on a team-versus-team challenge format, where two teams compete against each other in a series of interactive questions or challenges. The game aims to enhance teamwork and competitive spirit through a fun and fast-paced experience, inspired by group challenge game concepts.",
+
+
     }
   },
   ar: {
@@ -160,7 +168,16 @@ const resources = {
       "Core Framework": "إطار العمل الأساسي",
       "Weekly Commits": "إلتزامات الأسبوع",
       "Hours Coded": "ساعات البرمجة",
-      "Coffee Cups": "أكواب القهوة"
+      "Coffee Cups": "أكواب القهوة",
+      "TechWinInfo": "تكوين، شركة تقنية ناشئة متخصصة في تصميم وتطوير المواقع والتطبيقات الذكية. نسعى لتمكين الأفراد والمنشآت من التحول الرقمي من خلال تقديم حلول رقمية مبتكرة ذات جودة عالية، تتميز بتجربة مستخدم فريدة، مستويات أمنية متقدمة وأداء فعّال.",
+      "QTechWin":"ما تكوين؟",
+      "discoverTechwin":"تعرف على تكوين",
+      "TechWin": "تكوين",
+      "AboutMeenGadhha":"تعريف مين قدها؟",
+      "MeenGadhhaInfo":"لعبة تنافسية تعتمد على التحدي بين فريقين، حيث يتنافس كل فريق ضد الآخر في سلسلة من الأسئلة أو التحديات التفاعلية. تهدف اللعبة إلى تعزيز روح المنافسة والعمل الجماعي من خلال تجربة ممتعة وسريعة الإيقاع، مستوحاة من فكرة ألعاب التحدي الجماعية",
+
+
+
     }
   }
 };

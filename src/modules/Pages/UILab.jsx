@@ -39,9 +39,10 @@ import {
     CoffeeOutlined,
     ClockCircleOutlined,
     StarFilled,
+    FireOutlined,
 } from "@ant-design/icons";
 import { motion } from "framer-motion";
-import myPhoto from "../../assets/myPhoto.jpg";
+import myPhoto from "../../assets/images/myPhoto.jpg";
 import ThreeDElement from "../../components/ThreeDElement";
 
 const { Header, Sider, Content } = Layout;
@@ -91,7 +92,7 @@ const UILab = () => {
                 collapsed={collapsed} 
                 onCollapse={(value) => setCollapsed(value)}
                 theme={currentTheme}
-                style={{ background: siderBg, borderRight: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0' }}
+                style={{ borderRight: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0' }}
                 width={260}
             >
                 <div style={{ 
@@ -109,11 +110,14 @@ const UILab = () => {
                 <Menu
                     theme={currentTheme}
                     mode="inline"
-                    defaultSelectedKeys={['1']}
+                    defaultSelectedKeys={['3']}
                     style={{ borderRight: 0, marginTop: 16 }}
                     onClick={(e) => {
                         if (e.key === "5") {
                             navigate("/About-MePage");
+                        }
+                        if (e.key === "6") {
+                            navigate("/TechWin");
                         }
                     }}
                     items={[
@@ -123,6 +127,8 @@ const UILab = () => {
                         { type: "divider" },
                         { key: "4", icon: <SettingOutlined />, label: t("Settings") },
                         { key: "5", icon: <UserOutlined />, label: t("About Me") },
+                        { type: "divider" },
+                        { key: "6", icon: <FireOutlined />, label: t("TechWin") },
                     ]}
                 />
             </Sider>
