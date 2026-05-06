@@ -86,7 +86,16 @@ const resources = {
       "QTechWin":"What is Techwin?",
       "discoverTechwin":"Explore Techwin",
       "AboutMeenGadhha":"About MeenGadhha",
-      "MeenGadhhaInfo":"A competitive game based on a team-versus-team challenge format, where two teams compete against each other in a series of interactive questions or challenges. The game aims to enhance teamwork and competitive spirit through a fun and fast-paced experience, inspired by group challenge game concepts.",
+      "MeenGadhhaInfo":"A competitive game based on a team-versus-team challenge format, where two teams compete against each other in a series of interactive questions or challenges. The game aims to enhance teamwork and competitive spirit through a fun and fast-paced experience, inspired by group challenge game concepts.",  
+      "MyRole": "My Role in the Project",
+      "ReactJs": "Web Development (React JS)",
+      "ReactN": "Mobile Development (React Native)",
+      "WebUI": "Building interactive web user interfaces",
+      "WebAPI": "Integrating REST APIs and handling data flow",
+      "WebResponsive": "Creating responsive and reusable components",
+      "MobileScreens": "Developing mobile screens and navigation",
+      "MobileAPI": "Connecting mobile app with APIs and managing data",
+      "MobilePerformance": "Optimizing performance and user experience across devices"
 
 
     }
@@ -175,7 +184,15 @@ const resources = {
       "TechWin": "تكوين",
       "AboutMeenGadhha":"تعريف مين قدها؟",
       "MeenGadhhaInfo":"لعبة تنافسية تعتمد على التحدي بين فريقين، حيث يتنافس كل فريق ضد الآخر في سلسلة من الأسئلة أو التحديات التفاعلية. تهدف اللعبة إلى تعزيز روح المنافسة والعمل الجماعي من خلال تجربة ممتعة وسريعة الإيقاع، مستوحاة من فكرة ألعاب التحدي الجماعية",
-
+      "MyRole": "دوري في المشروع",
+      "ReactJs": "تطوير واجهات الويب (React JS)",
+      "ReactN": "تطوير تطبيقات الجوال (React Native)",
+      "WebUI": "بناء واجهات مستخدم تفاعلية لتطبيق الويب",
+      "WebAPI": "ربط الواجهات مع واجهات برمجة التطبيقات (API)",
+      "WebResponsive": "تصميم واجهات متجاوبة وقابلة لإعادة الاستخدام",
+      "MobileScreens": "تطوير شاشات تطبيق الجوال والتنقل بينها",
+      "MobileAPI": "ربط التطبيق مع الـ API وإدارة البيانات",
+      "MobilePerformance": "تحسين الأداء وتجربة المستخدم على الأجهزة المختلفة"
 
 
     }

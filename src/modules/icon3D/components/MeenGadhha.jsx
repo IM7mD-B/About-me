@@ -12,9 +12,9 @@ const MeenGadhha = () => {
 
 
     return (
-        <Card title={t("AboutMeenGadhha")} className="shadow-md rounded-2xl border-none h-full dark:bg-[#141414]" styles={{ header: { borderBottom: 'none', paddingBottom: 0 } }}>
+        <Card title={<span className="text-2xl font-bold"> {t("AboutMeenGadhha")}</span>} className="shadow-md rounded-2xl border-none h-full dark:bg-[#141414]" styles={{ header: { borderBottom: 'none', paddingBottom: 0 } }}>
             <img src={MeenGadhhaIcon} alt="MeenGadhha Icon" className='size-50  w-full '/>
-            <Text> {t("MeenGadhhaInfo")}</Text>
+            <Text className="!text-xl"> {t("MeenGadhhaInfo")}</Text>
 
         </Card>
     );

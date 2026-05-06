@@ -21,7 +21,7 @@ const AboutTechWin = () => {
             <Row gutter={[32, 32]} align="middle">
 
                 {/* Image */}
-                <Col xs={24} md={12}>
+                <Col xs={24} md={10}>
                     <div className="flex  justify-center  ">
                         <img
                             src={isDarkMode ? TechWinBIcon : TechWinWIcon}
@@ -32,14 +32,14 @@ const AboutTechWin = () => {
                 </Col>
 
                 {/* Content */}
-                <Col xs={24} md={12}>
+                <Col xs={24} md={14}>
                     <div>
 
                         <Title level={2}>
                             {t("QTechWin")}
                         </Title>
 
-                        <Paragraph className="text-base leading-relaxed !my-5 ">
+                        <Paragraph className="text-base leading-relaxed !text-xl !my-5 ">
                             {t("TechWinInfo")}
                         </Paragraph>
 
