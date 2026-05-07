@@ -39,7 +39,7 @@ const AboutTechWin = () => {
                             {t("QTechWin")}
                         </Title>
 
-                        <Paragraph className="text-base leading-relaxed !my-5 ">
+                        <Paragraph className="text-base leading-relaxed !text-[18px] !font-semibold !my-5 ">
                             {t("TechWinInfo")}
                         </Paragraph>
 
@@ -48,7 +48,7 @@ const AboutTechWin = () => {
                                 not-even:!bg-orange-600 hover:!bg-orange-600/10 hover:backdrop-blur-md
                                 !shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all duration-300"
                         >
-                            <Text>{t("discoverTechwin")}</Text>
+                            <Text className='!text-[18px] !font-bold' >{t("discoverTechwin")}</Text>
 
                         </Button>
 

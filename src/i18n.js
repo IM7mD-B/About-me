@@ -87,6 +87,8 @@ const resources = {
       "discoverTechwin":"Explore Techwin",
       "AboutMeenGadhha":"About MeenGadhha",
       "MeenGadhhaInfo":"A competitive game based on a team-versus-team challenge format, where two teams compete against each other in a series of interactive questions or challenges. The game aims to enhance teamwork and competitive spirit through a fun and fast-paced experience, inspired by group challenge game concepts.",
+      "ButtonMeenGadhha":"قد التحدي؟",
+
 
 
     }
@@ -175,6 +177,7 @@ const resources = {
       "TechWin": "تكوين",
       "AboutMeenGadhha":"تعريف مين قدها؟",
       "MeenGadhhaInfo":"لعبة تنافسية تعتمد على التحدي بين فريقين، حيث يتنافس كل فريق ضد الآخر في سلسلة من الأسئلة أو التحديات التفاعلية. تهدف اللعبة إلى تعزيز روح المنافسة والعمل الجماعي من خلال تجربة ممتعة وسريعة الإيقاع، مستوحاة من فكرة ألعاب التحدي الجماعية",
+      "ButtonMeenGadhha":"قد التحدي؟",
 
 
 
