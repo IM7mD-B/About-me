@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Layout, Row, Col, FloatButton, Button, Space } from 'antd';
 import { ArrowUpOutlined, ArrowLeftOutlined, GlobalOutlined, BulbFilled, BulbOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,9 @@ import SkillsSection from '../components/SkillsSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ExperienceSection from '../components/ExperienceSection';
 import EducationSection from '../components/EducationSection';
-import ThreeDElement from '../../../components/ThreeDElement';
+
+// Lazy load the 3D element to optimize bundle size and page loading speed
+const ThreeDElement = lazy(() => import('../../../components/ThreeDElement'));
 
 const { Content, Header } = Layout;
 
@@ -50,7 +52,7 @@ const AboutMePage = () => {
           borderBottom: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0',
           position: 'sticky',
           top: 0,
-          zIndex: 10,
+          zIndex: 50,
       }}>
         <Button 
           type="text" 
@@ -77,7 +79,9 @@ const AboutMePage = () => {
 
       <Content className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 relative">
         <div className="absolute top-0 right-0 w-full h-[400px] opacity-50 z-0 pointer-events-none">
-          <ThreeDElement isDarkMode={isDarkMode} />
+          <Suspense fallback={<div className="w-full h-full min-h-[300px]" />}>
+            <ThreeDElement isDarkMode={isDarkMode} />
+          </Suspense>
         </div>
 
         <motion.div 

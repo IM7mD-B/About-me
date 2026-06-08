@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ConfigProvider, theme } from "antd";
+import { ConfigProvider, theme, Spin } from "antd";
 import { useTranslation } from "react-i18next";
 import { useAppStore } from "./store/appStore";
-import UILab from "./modules/Pages/UILab";
-import AboutMePage from "./modules/aboutMe/pages/AboutMePage";
-import TechWin from "./modules/icon3D/pages/TechWin";
+
+// Lazy load pages for optimized bundle size and performance
+const UILab = lazy(() => import("./modules/Pages/UILab"));
+const AboutMePage = lazy(() => import("./modules/aboutMe/pages/AboutMePage"));
+const TechWin = lazy(() => import("./modules/icon3D/pages/TechWin"));
+
 function App() {
   const { isDarkMode, language } = useAppStore();
   const { i18n } = useTranslation();
@@ -36,11 +39,23 @@ function App() {
       }}
     >
       <BrowserRouter>
-        <Routes>
-          <Route index element={<UILab />} />
-          <Route path="/About-MePage" element={<AboutMePage />} />
-          <Route path="/TechWin" element={<TechWin />} />
-        </Routes>
+        <Suspense fallback={
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100vh',
+            background: isDarkMode ? '#000000' : '#f8fafc'
+          }}>
+            <Spin size="large" />
+          </div>
+        }>
+          <Routes>
+            <Route index element={<UILab />} />
+            <Route path="/About-MePage" element={<AboutMePage />} />
+            <Route path="/TechWin" element={<TechWin />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </ConfigProvider>
   )

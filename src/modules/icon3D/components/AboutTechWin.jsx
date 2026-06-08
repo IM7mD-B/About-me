@@ -21,18 +21,19 @@ const AboutTechWin = () => {
             <Row gutter={[32, 32]} align="middle">
 
                 {/* Image */}
-                <Col xs={24} md={12}>
+                <Col xs={24} md={10}>
                     <div className="flex  justify-center  ">
                         <img
                             src={isDarkMode ? TechWinBIcon : TechWinWIcon}
                             alt="Techwin Logo"
                             className=" object-contain"
+                            loading="lazy"
                         />
                     </div>
                 </Col>
 
                 {/* Content */}
-                <Col xs={24} md={12}>
+                <Col xs={24} md={14}>
                     <div>
 
                         <Title level={2}>
@@ -48,7 +49,7 @@ const AboutTechWin = () => {
                                 not-even:!bg-orange-600 hover:!bg-orange-600/10 hover:backdrop-blur-md
                                 !shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all duration-300"
                         >
-                            <Text className='!text-[18px] !font-bold' >{t("discoverTechwin")}</Text>
+                            <Text className='!text-[16px] !font-bold' >{t("discoverTechwin")}</Text>
 
                         </Button>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Layout, Button, Row, Col, Space } from 'antd';
 import { ArrowLeftOutlined, GlobalOutlined, BulbFilled, BulbOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
@@ -6,10 +6,13 @@ import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../../store/appStore';
 import MeenGadhha from '../components/MeenGadhha';
 import MyWork from '../components/MyWork';
-import Techwin3D from '../components/Techwin3D';
 import AboutTechWin from '../components/AboutTechWin';
+import ToolsCard from '../components/ToolsCard';
+import TechStackCard from '../components/TechStackCard';
 import { motion } from 'framer-motion';
 
+// Lazy-load the heavy 3D canvas component
+const Techwin3D = lazy(() => import('../components/Techwin3D'));
 
 const { Header, Content } = Layout;
 
@@ -39,7 +42,10 @@ const TechWin = () => {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                borderBottom: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0'
+                borderBottom: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0',
+                position: 'sticky',
+                top: 0,
+                zIndex: 50,
             }}>
                 <Button
                     type="text"
@@ -69,7 +75,9 @@ const TechWin = () => {
 
                 {/* 3D BACKGROUND */}
                 <div className="absolute inset-0 z-0">
-                    <Techwin3D isDarkMode={isDarkMode} />
+                    <Suspense fallback={<div className="w-full h-full min-h-[300px]" />}>
+                        <Techwin3D isDarkMode={isDarkMode} />
+                    </Suspense>
                 </div>
 
                 {/* OVERLAY (مهم جدًا عشان الكاردز لاحقًا) */}
@@ -90,7 +98,20 @@ const TechWin = () => {
                         </Col>
                         <Col xs={24} md={16}>
                             <motion.div variants={itemVariants} className="h-full">
-                                <MyWork/>
+                                <MyWork />
+                            </motion.div>
+                        </Col>
+                    </Row>
+
+                    <Row gutter={[24, 24]} className='my-5 opacity-90'>
+                        <Col xs={24} md={16}>
+                            <motion.div variants={itemVariants} className="h-full">
+                                <ToolsCard />
+                            </motion.div>
+                        </Col>
+                        <Col xs={24} md={8}>
+                            <motion.div variants={itemVariants} className="h-full">
+                                <TechStackCard />
                             </motion.div>
                         </Col>
                     </Row>
