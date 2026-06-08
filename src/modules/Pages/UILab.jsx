@@ -92,15 +92,15 @@ const UILab = () => {
     return (
         <Layout style={{ minHeight: "100vh", background: layoutBg, transition: 'background 0.3s' }}>
             {/* Sidebar */}
-            <Sider 
-                collapsible 
-                collapsed={collapsed} 
+            <Sider
+                collapsible
+                collapsed={collapsed}
                 onCollapse={(value) => setCollapsed(value)}
                 breakpoint="lg"
                 collapsedWidth="0"
                 trigger={null}
                 theme={currentTheme}
-                style={{ 
+                style={{
                     borderRight: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0',
                     position: 'sticky',
                     top: 0,
@@ -110,10 +110,10 @@ const UILab = () => {
                 }}
                 width={260}
             >
-                <div style={{ 
-                    height: 64, 
-                    display: 'flex', 
-                    alignItems: 'center', 
+                <div style={{
+                    height: 64,
+                    display: 'flex',
+                    alignItems: 'center',
                     justifyContent: 'center',
                     borderBottom: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0',
                     gap: 12
@@ -151,8 +151,8 @@ const UILab = () => {
             {/* Main Layout */}
             <Layout style={{ background: 'transparent' }}>
                 {/* Header */}
-                <Header style={{ 
-                    background: headerBg, 
+                <Header style={{
+                    background: headerBg,
                     padding: '0 16px',
                     display: 'flex',
                     alignItems: 'center',
@@ -163,21 +163,25 @@ const UILab = () => {
                     zIndex: 50,
                 }}>
                     <div className="flex items-center gap-2">
-                        <Button 
-                            type="text" 
+                        <Button
+                            type="text"
                             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
                             onClick={() => setCollapsed(!collapsed)}
                             style={{ color: isDarkMode ? '#fff' : '#000', fontSize: 16 }}
                         />
-                        <Title level={4} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }} className="text-sm sm:text-base md:text-lg">
+                        <Title level={4}
+                            style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}
+                            // التعديل هنا: علامة التعجب تأتي بعد النقطتين الخاصة بحجم الشاشة
+                            className="!text-sm sm:!text-base md:!text-lg !font-bold"
+                        >
                             {t("Ant Design UI Lab 🚀")}
                         </Title>
                     </div>
-                    
+
                     <Flex align="center" gap="small">
-                        <Button 
-                            type="text" 
-                            icon={<GlobalOutlined style={{ fontSize: 16, color: isDarkMode ? '#fff' : '#000' }} />} 
+                        <Button
+                            type="text"
+                            icon={<GlobalOutlined style={{ fontSize: 16, color: isDarkMode ? '#fff' : '#000' }} />}
                             onClick={toggleLanguage}
                         >
                             <span style={{ color: isDarkMode ? '#fff' : '#000' }}>{language === 'en' ? 'عربي' : 'EN'}</span>
@@ -191,8 +195,8 @@ const UILab = () => {
                             />
                         </Tooltip>
                         {/* Fallback button for dark mode toggle on mobile */}
-                        <Button 
-                            type="text" 
+                        <Button
+                            type="text"
                             className="inline-block sm:hidden"
                             icon={isDarkMode ? <BulbFilled style={{ color: '#ffb800' }} /> : <BulbOutlined />}
                             onClick={toggleTheme}
@@ -209,7 +213,7 @@ const UILab = () => {
                 </Header>
 
                 {/* Content */}
-                <Content 
+                <Content
                     className="p-4 md:p-8 w-full max-w-full relative overflow-x-hidden min-h-[calc(100vh-64px)]"
                     style={{ margin: 0, position: 'relative' }}
                 >
@@ -220,7 +224,7 @@ const UILab = () => {
                         </Suspense>
                     </div>
 
-                    <motion.div 
+                    <motion.div
                         className="relative z-10"
                         variants={containerVariants}
                         initial="hidden"
@@ -255,8 +259,8 @@ const UILab = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {/* Favorite Libraries */}
                                 <motion.div variants={itemVariants} className="h-full">
-                                    <Card 
-                                        title={<Title level={5} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>{t("Favorite Libraries")}</Title>} 
+                                    <Card
+                                        title={<Title level={5} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>{t("Favorite Libraries")}</Title>}
                                         bordered={false}
                                         className={`shadow-md rounded-2xl h-full transition-all duration-300 hover:shadow-lg ${isDarkMode ? 'bg-[#141414] border-none' : 'bg-white'}`}
                                     >
@@ -279,8 +283,8 @@ const UILab = () => {
 
                                 {/* Learning Path */}
                                 <motion.div variants={itemVariants} className="h-full">
-                                    <Card 
-                                        title={<Title level={5} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>{t("Current Learning Path")}</Title>} 
+                                    <Card
+                                        title={<Title level={5} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>{t("Current Learning Path")}</Title>}
                                         bordered={false}
                                         className={`shadow-md rounded-2xl h-full transition-all duration-300 hover:shadow-lg ${isDarkMode ? 'bg-[#141414] border-none' : 'bg-white'}`}
                                     >
@@ -292,7 +296,7 @@ const UILab = () => {
                                                 </Flex>
                                                 <Progress percent={40} status="active" strokeColor={{ '0%': '#108ee9', '100%': '#87d068' }} />
                                             </div>
-                                            
+
                                             <div>
                                                 <Flex justify="space-between" className="mb-2">
                                                     <Text strong style={{ color: isDarkMode ? '#fff' : '#000' }}>{t("Advanced Animation")}</Text>
@@ -316,14 +320,21 @@ const UILab = () => {
                                                 </Flex>
                                                 <Progress percent={95} status="success" strokeColor="#1677ff" />
                                             </div>
+                                            <div>
+                                                <Flex justify="space-between" className="mb-2">
+                                                    <Text strong style={{ color: isDarkMode ? '#fff' : '#000' }}>{t("React.js")}</Text>
+                                                    <Text type="secondary">99%</Text>
+                                                </Flex>
+                                                <Progress percent={99} status="success" strokeColor={{ '0%': '#afc8d9ff', '100%': '#0d93f3ff' }} />
+                                            </div>
                                         </Flex>
                                     </Card>
                                 </motion.div>
 
                                 {/* Quick Actions & Activity Card */}
                                 <motion.div variants={itemVariants} className="h-full">
-                                    <Card 
-                                        title={<Title level={5} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>{t("Quick Performance & Activity")}</Title>} 
+                                    <Card
+                                        title={<Title level={5} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>{t("Quick Performance & Activity")}</Title>}
                                         bordered={false}
                                         className={`shadow-md rounded-2xl h-full transition-all duration-300 hover:shadow-lg ${isDarkMode ? 'bg-[#141414] border-none' : 'bg-white'}`}
                                     >
