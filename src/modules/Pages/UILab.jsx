@@ -125,7 +125,7 @@ const UILab = () => {
                 <Menu
                     theme={currentTheme}
                     mode="inline"
-                    defaultSelectedKeys={['3']}
+                    defaultSelectedKeys={['1']}
                     style={{ borderRight: 0, marginTop: 16 }}
                     onClick={(e) => {
                         if (e.key === "5") {
@@ -339,21 +339,21 @@ const UILab = () => {
                                         className={`shadow-md rounded-2xl h-full transition-all duration-300 hover:shadow-lg ${isDarkMode ? 'bg-[#141414] border-none' : 'bg-white'}`}
                                     >
                                         <Flex vertical gap="middle" className="mt-4">
-                                            <div className="flex justify-between items-center bg-neutral-50/70 dark:bg-neutral-900/60 p-3.5 rounded-xl border border-neutral-100 dark:border-neutral-800 transition-colors hover:border-blue-500/30">
+                                            <div className="flex justify-between items-center bg-neutral-50/70 dark:bg-neutral-200/10 p-3.5 rounded-xl border border-neutral-100 dark:border-neutral-300/30 transition-colors hover:border-blue-500/30">
                                                 <Space>
                                                     <ThunderboltOutlined style={{ color: '#52c41a', fontSize: 18 }} />
                                                     <Text strong style={{ color: isDarkMode ? '#fff' : '#000' }}>{t("Lighthouse Score")}</Text>
                                                 </Space>
                                                 <Tag color="success" className="font-bold border-none px-3 bg-green-500/10 text-green-500">98%</Tag>
                                             </div>
-                                            <div className="flex justify-between items-center bg-neutral-50/70 dark:bg-neutral-900/60 p-3.5 rounded-xl border border-neutral-100 dark:border-neutral-800 transition-colors hover:border-blue-500/30">
+                                            <div className="flex justify-between items-center bg-neutral-50/70 dark:bg-neutral-200/10 p-3.5 rounded-xl border border-neutral-100 dark:border-neutral-300/30 transition-colors hover:border-blue-500/30">
                                                 <Space>
                                                     <CodeOutlined style={{ color: '#1677ff', fontSize: 18 }} />
                                                     <Text strong style={{ color: isDarkMode ? '#fff' : '#000' }}>{t("Build Version")}</Text>
                                                 </Space>
                                                 <Tag color="processing" className="font-bold border-none px-3 bg-blue-500/10 text-blue-500">v1.2.0-prod</Tag>
                                             </div>
-                                            <div className="flex justify-between items-center bg-neutral-50/70 dark:bg-neutral-900/60 p-3.5 rounded-xl border border-neutral-100 dark:border-neutral-800 transition-colors hover:border-blue-500/30">
+                                            <div className="flex justify-between items-center bg-neutral-50/70 dark:bg-neutral-200/10 p-3.5 rounded-xl border border-neutral-100 dark:border-neutral-300/30 transition-colors hover:border-blue-500/30">
                                                 <Space>
                                                     <BulbFilled style={{ color: '#faad14', fontSize: 18 }} />
                                                     <Text strong style={{ color: isDarkMode ? '#fff' : '#000' }}>{t("Task Completion")}</Text>
