@@ -58,6 +58,7 @@ const UILab = () => {
     const { t } = useTranslation();
     const { isDarkMode, toggleTheme, language, toggleLanguage } = useAppStore();
     const [collapsed, setCollapsed] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const currentTheme = isDarkMode ? "dark" : "light";
     const headerBg = isDarkMode ? "#141414" : "#ffffff";
@@ -93,33 +94,47 @@ const UILab = () => {
         <Layout style={{ minHeight: "100vh", background: layoutBg, transition: 'background 0.3s' }}>
             {/* Sidebar */}
             <Sider
-                collapsible
-                collapsed={collapsed}
-                onCollapse={(value) => setCollapsed(value)}
-                breakpoint="lg"
-                collapsedWidth="0"
-                trigger={null}
-                theme={currentTheme}
-                style={{
-                    borderRight: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0',
-                    position: 'sticky',
-                    top: 0,
-                    height: '100vh',
-                    left: 0,
-                    zIndex: 100
-                }}
-                width={260}
-            >
+    collapsible
+    collapsed={collapsed}
+    onCollapse={(value) => setCollapsed(value)}
+    breakpoint="lg"
+    collapsedWidth="0"
+    // هذا السطر السحري يخبر ريأكت فوراً إذا كانت الشاشة جوال (true) أو كمبيوتر (false)
+    onBreakpoint={(broken) => setIsMobile(broken)} 
+    trigger={null}
+    theme={currentTheme}
+    style={{
+        borderRight: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0',
+        // الآن الشرط يعتمد على حجم الشاشة الفعلي وليس على نص ثابت
+        position: isMobile ? 'fixed' : 'sticky', 
+        top: 0,
+        height: '100vh',
+        left: 0,
+        zIndex: 1000,
+        boxShadow: (isMobile && !collapsed) ? '4px 0 10px rgba(0,0,0,0.1)' : 'none'
+    }}
+    width={260}
+>
                 <div style={{
                     height: 64,
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    justifyContent: 'space-between',
                     borderBottom: isDarkMode ? '1px solid #303030' : '1px solid #f0f0f0',
-                    gap: 12
+                    padding: '0 16px'
                 }}>
-                    <RocketOutlined style={{ fontSize: 24, color: '#1677ff' }} />
-                    {!collapsed && <Title level={4} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>MB-Kitchen</Title>}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                        <RocketOutlined style={{ fontSize: 24, color: '#1677ff' }} />
+                        {!collapsed && <Title level={4} style={{ margin: 0, color: isDarkMode ? '#fff' : '#000' }}>MB-Kitchen</Title>}
+                    </div>
+                    {isMobile && !collapsed && (
+                        <Button
+                            type="text"
+                            icon={<MenuFoldOutlined />}
+                            onClick={() => setCollapsed(true)}
+                            style={{ color: isDarkMode ? '#fff' : '#000' }}
+                        />
+                    )}
                 </div>
 
                 <Menu
@@ -195,15 +210,6 @@ const UILab = () => {
                             />
                         </Tooltip>
                         {/* Fallback button for dark mode toggle on mobile */}
-                        <Button
-                            type="text"
-                            className="inline-block sm:hidden"
-                            icon={isDarkMode ? <BulbFilled style={{ color: '#ffb800' }} /> : <BulbOutlined />}
-                            onClick={toggleTheme}
-                        />
-                        <Badge count={5} size="small" className="hidden sm:inline-block">
-                            <Button type="text" shape="circle" icon={<BellOutlined style={{ fontSize: 16, color: isDarkMode ? '#fff' : '#000' }} />} />
-                        </Badge>
                         <Divider type="vertical" className="hidden sm:inline-block" />
                         <Space>
                             <Avatar src={myPhoto} icon={<UserOutlined />} className="border border-blue-500" loading="lazy" />
