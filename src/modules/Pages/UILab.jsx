@@ -152,10 +152,10 @@ const UILab = () => {
                     }}
                     items={[
                         { key: "1", icon: <DashboardOutlined />, label: t("Dashboard") },
-                        { key: "2", icon: <AppstoreOutlined />, label: t("Components") },
-                        { key: "3", icon: <CodeOutlined />, label: t("Development") },
+                        // { key: "2", icon: <AppstoreOutlined />, label: t("Components") },
+                        // { key: "3", icon: <CodeOutlined />, label: t("Development") },
                         { type: "divider" },
-                        { key: "4", icon: <SettingOutlined />, label: t("Settings") },
+                        // { key: "4", icon: <SettingOutlined />, label: t("Settings") },
                         { key: "5", icon: <UserOutlined />, label: t("About Me") },
                         { type: "divider" },
                         { key: "6", icon: <FireOutlined />, label: t("TechWin") },
